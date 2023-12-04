@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 public class PosterManagerTest {
     PosterManager man = new PosterManager();
+
     @BeforeEach
     public void setup() {
         man.addFilms("Bladshot");
@@ -13,6 +14,7 @@ public class PosterManagerTest {
         man.addFilms("Chelovek-nevedimka");
         man.addFilms("Trolly. Mirovoi tur");
     }
+
     @Test
 
     public void addFilms() {
@@ -22,16 +24,18 @@ public class PosterManagerTest {
         String[] actual = man.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
 
     public void addFilmsAboveLimit() {
         man.addFilms("Nomer odin");
         man.addFilms("Film");
 
-        String[] expected = {"Bladshot", "Vpered", "Otel 'Belgrad'", "Dgentelmen", "Chelovek-nevedimka", "Trolly. Mirovoi tur", "Nomer odin","Film"};
+        String[] expected = {"Bladshot", "Vpered", "Otel 'Belgrad'", "Dgentelmen", "Chelovek-nevedimka", "Trolly. Mirovoi tur", "Nomer odin", "Film"};
         String[] actual = man.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
 
     public void showAllFilmsInReverseBelowLimit() {
@@ -40,10 +44,11 @@ public class PosterManagerTest {
         man.addFilms("Vpered");
         man.addFilms("Otel 'Belgrad'");
 
-        String[] expected = {"Otel 'Belgrad'","Vpered", "Bladshot"};
+        String[] expected = {"Otel 'Belgrad'", "Vpered", "Bladshot"};
         String[] actual = man.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
 
     public void showAllFilmsInReverse() {
@@ -54,10 +59,11 @@ public class PosterManagerTest {
         man.addFilms("Dgentelmen");
         man.addFilms("Chelovek-nevedimka");
 
-        String[] expected = {"Chelovek-nevedimka", "Dgentelmen","Otel 'Belgrad'","Vpered", "Bladshot"};
+        String[] expected = {"Chelovek-nevedimka", "Dgentelmen", "Otel 'Belgrad'", "Vpered", "Bladshot"};
         String[] actual = man.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
 
     public void showAllFilmsInReverseLimit() {
@@ -71,7 +77,7 @@ public class PosterManagerTest {
         man.addFilms("Nomer odin");
 
 
-        String[] expected = { "Nomer odin","Trolly. Mirovoi tur","Chelovek-nevedimka", "Dgentelmen","Otel 'Belgrad'","Vpered", "Bladshot"};
+        String[] expected = {"Nomer odin", "Trolly. Mirovoi tur", "Chelovek-nevedimka", "Dgentelmen", "Otel 'Belgrad'", "Vpered", "Bladshot"};
         String[] actual = man.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }

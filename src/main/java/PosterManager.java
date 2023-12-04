@@ -23,6 +23,7 @@ public class PosterManager {
     public String[] findAll() {
         return films;
     }
+
     public String[] findLast() {
         int resultLength;
         if (films.length < numberOfFilms) {
