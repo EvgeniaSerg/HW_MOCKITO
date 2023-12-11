@@ -1,5 +1,5 @@
 public class PosterManager {
-    int numberOfFilms;
+    private int numberOfFilms;
     private String[] films = new String[0];
 
     public PosterManager() {
@@ -11,7 +11,7 @@ public class PosterManager {
     }
 
 
-    public void addFilms(String film) {
+    public void setAddFilms(String film) {
         String[] tmp = new String[films.length + 1];
         for (int i = 0; i < films.length; i++) {
             tmp[i] = films[i];
@@ -20,11 +20,11 @@ public class PosterManager {
         films = tmp;
     }
 
-    public String[] findAll() {
+    public String[] getFindAll() {
         return films;
     }
 
-    public String[] findLast() {
+    public String[] setFindLast() {
         int resultLength;
         if (films.length < numberOfFilms) {
             resultLength = films.length;
