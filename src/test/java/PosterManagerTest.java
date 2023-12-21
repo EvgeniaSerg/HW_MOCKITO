@@ -35,21 +35,10 @@ public class PosterManagerTest {
         String[] actual = man.getFindAll();
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
 
-    public void showAllFilmsInReverseBelowLimit2() {
-        PosterManager man = new PosterManager(2);
-        man.setAddFilms("Bladshot");
-        man.setAddFilms("Vpered");
-
-
-        String[] expected = {"Vpered","Bladshot"};
-        String[] actual = man.setFindLast();
-        Assertions.assertArrayEquals(expected, actual);
-    }
-    @Test
-
-    public void showAllFilmsInReverseBelowLimit3() {
+    public void showAllFilmsInReverseLimit() {
         PosterManager man = new PosterManager(3);
         man.setAddFilms("Bladshot");
         man.setAddFilms("Vpered");
@@ -77,19 +66,32 @@ public class PosterManagerTest {
 
     @Test
 
-    public void showAllFilmsInReverseLimit() {
-        PosterManager man = new PosterManager(7);
+    public void showAllFilmsInBelowLimit() {
+        PosterManager man = new PosterManager(8);
+        man.setAddFilms("Bladshot");
+        man.setAddFilms("Vpered");
+        man.setAddFilms("Otel 'Belgrad'");
+        man.setAddFilms("Dgentelmen");
+
+
+        String[] expected = {"Dgentelmen", "Otel 'Belgrad'", "Vpered", "Bladshot"};
+        String[] actual = man.setFindLast();
+        Assertions.assertArrayEquals(expected, actual);
+    }
+    @Test
+
+    public void showAllFilmsInReverseAboveLimit() {
+        PosterManager man = new PosterManager(5);
         man.setAddFilms("Bladshot");
         man.setAddFilms("Vpered");
         man.setAddFilms("Otel 'Belgrad'");
         man.setAddFilms("Dgentelmen");
         man.setAddFilms("Chelovek-nevedimka");
         man.setAddFilms("Trolly. Mirovoi tur");
-        man.setAddFilms("Nomer odin");
 
-
-        String[] expected = {"Nomer odin", "Trolly. Mirovoi tur", "Chelovek-nevedimka", "Dgentelmen", "Otel 'Belgrad'", "Vpered", "Bladshot"};
+        String[] expected = {"Trolly. Mirovoi tur","Chelovek-nevedimka","Dgentelmen", "Otel 'Belgrad'", "Vpered"};
         String[] actual = man.setFindLast();
         Assertions.assertArrayEquals(expected, actual);
     }
+
 }

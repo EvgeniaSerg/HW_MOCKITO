@@ -7,7 +7,7 @@ public class PosterManager {
     }
 
     public PosterManager(int numberOfFilms) {
-        this.numberOfFilms = 7;
+        this.numberOfFilms = numberOfFilms;
     }
 
 
