@@ -20,11 +20,11 @@ public class PosterManager {
         films = tmp;
     }
 
-    public String[] FindAll() {
+    public String[] findAll() {
         return films;
     }
 
-    public String[] FindLast() {
+    public String[] findLast() {
         int resultLength;
         if (films.length < numberOfFilms) {
             resultLength = films.length;

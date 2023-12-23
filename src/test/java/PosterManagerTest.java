@@ -21,7 +21,7 @@ public class PosterManagerTest {
         man.setAddFilms("Nomer odin");
 
         String[] expected = {"Bladshot", "Vpered", "Otel 'Belgrad'", "Dgentelmen", "Chelovek-nevedimka", "Trolly. Mirovoi tur", "Nomer odin"};
-        String[] actual = man.FindAll();
+        String[] actual = man.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -32,7 +32,7 @@ public class PosterManagerTest {
         man.setAddFilms("Film");
 
         String[] expected = {"Bladshot", "Vpered", "Otel 'Belgrad'", "Dgentelmen", "Chelovek-nevedimka", "Trolly. Mirovoi tur", "Nomer odin", "Film"};
-        String[] actual = man.FindAll();
+        String[] actual = man.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -45,7 +45,7 @@ public class PosterManagerTest {
         man.setAddFilms("Otel 'Belgrad'");
 
         String[] expected = {"Otel 'Belgrad'", "Vpered", "Bladshot"};
-        String[] actual = man.FindLast();
+        String[] actual = man.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -60,7 +60,7 @@ public class PosterManagerTest {
         man.setAddFilms("Chelovek-nevedimka");
 
         String[] expected = {"Chelovek-nevedimka", "Dgentelmen", "Otel 'Belgrad'", "Vpered", "Bladshot"};
-        String[] actual = man.FindLast();
+        String[] actual = man.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -75,7 +75,7 @@ public class PosterManagerTest {
 
 
         String[] expected = {"Dgentelmen", "Otel 'Belgrad'", "Vpered", "Bladshot"};
-        String[] actual = man.FindLast();
+        String[] actual = man.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
     @Test
@@ -90,7 +90,7 @@ public class PosterManagerTest {
         man.setAddFilms("Trolly. Mirovoi tur");
 
         String[] expected = {"Trolly. Mirovoi tur","Chelovek-nevedimka","Dgentelmen", "Otel 'Belgrad'", "Vpered"};
-        String[] actual = man.FindLast();
+        String[] actual = man.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
 
