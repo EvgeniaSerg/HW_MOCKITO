@@ -45,7 +45,7 @@ public class PosterManagerTest {
         man.setAddFilms("Otel 'Belgrad'");
 
         String[] expected = {"Otel 'Belgrad'", "Vpered", "Bladshot"};
-        String[] actual = man.setFindLast();
+        String[] actual = man.getFindLast();
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -60,7 +60,7 @@ public class PosterManagerTest {
         man.setAddFilms("Chelovek-nevedimka");
 
         String[] expected = {"Chelovek-nevedimka", "Dgentelmen", "Otel 'Belgrad'", "Vpered", "Bladshot"};
-        String[] actual = man.setFindLast();
+        String[] actual = man.getFindLast();
         Assertions.assertArrayEquals(expected, actual);
     }
 
@@ -75,7 +75,7 @@ public class PosterManagerTest {
 
 
         String[] expected = {"Dgentelmen", "Otel 'Belgrad'", "Vpered", "Bladshot"};
-        String[] actual = man.setFindLast();
+        String[] actual = man.getFindLast();
         Assertions.assertArrayEquals(expected, actual);
     }
     @Test
@@ -90,7 +90,7 @@ public class PosterManagerTest {
         man.setAddFilms("Trolly. Mirovoi tur");
 
         String[] expected = {"Trolly. Mirovoi tur","Chelovek-nevedimka","Dgentelmen", "Otel 'Belgrad'", "Vpered"};
-        String[] actual = man.setFindLast();
+        String[] actual = man.getFindLast();
         Assertions.assertArrayEquals(expected, actual);
     }
 
